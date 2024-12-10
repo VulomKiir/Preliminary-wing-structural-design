@@ -3,7 +3,7 @@ import scipy as sp
 import math
 import matplotlib.pyplot as plt
 import Load_Diagrams as ld
-from combining_code_just_functions import *
+from Functions import *
 
 design_philosophy_nr = int(input("Enter design philosophy nr:"))
 
