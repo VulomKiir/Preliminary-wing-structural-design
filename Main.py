@@ -14,8 +14,6 @@ c_r = 7.4 #root chord [m]
 c_t = 2.22 #tip chord [m]
 y_end_add_sp = hb/3 + 1 # the y choordinate of the end of additional spar
 
-
-
 # Material constants
 E = 72.4e9 #Pa
 G = 28e9 #Pa
@@ -116,7 +114,6 @@ def moment_diagram_plot():
     ixx = np.zeros(num_i + 1)
     izz = np.zeros(num_i + 1)
 
-
     for i in range(num_i + 1):
       y = i * hb / num_i
       c = c_r - (c_r - c_t) * y / hb
@@ -143,8 +140,6 @@ def moment_diagram_plot():
     ax1.set_xlabel("y")
     ax1.set_ylabel("Ixx")
 
-
-
     ax2.plot(y_values, izz)
     ax2.set_title(f"Plot of $I_{{zz}}$ vs y (design {design_philosophy_nr})")
     ax2.set_xlabel("y")
@@ -159,7 +154,7 @@ def moment_diagram_plot():
 ixx, izz = moment_diagram_plot()
 
 
-#---------------TORSIONAL STIFFNESS CALCULATIONS----------------
+#---------------TORSIONAL STIFFNESS CALCULATIONS----------------#
 
 def wingbox_gemoetry():
     # Wingbox geometry with each wall named
@@ -245,9 +240,9 @@ def torsional_constant():
 
 J_yv = torsional_constant()
 
-#---------------------BENDING AND TWIST DISTRIBUTION------------------------
+#---------------------BENDING AND TWIST DISTRIBUTION------------------------#
 
-#------------------------LOAD CASES------------------------
+#------------------------LOAD CASES------------------------#
 
 #Deflection
 def calculate_deflection_and_twist_general(y_values, ixx, J_yv, E, G, ld, case_number):
